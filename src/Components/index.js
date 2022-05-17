@@ -1,0 +1,6 @@
+import {default as Navbar} from "./Navbar"
+import {default as Exchanges} from "./Exchanges"
+import {default as HomePage} from "./Homepage"
+import {default as News} from "./News"
+import {default as Cryptocurrencies} from "./CryptoCurrencies"
+import {default as CryptoDetails} from "./CryptoDetails"
