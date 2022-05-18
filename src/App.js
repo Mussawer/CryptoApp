@@ -1,12 +1,13 @@
 import React from 'react';
 import { Route, Link, Routes } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
+
 import { Exchanges, HomePage, News, Cryptocurrencies, CryptoDetails, Navbar } from './Components';
 import './App.css';
 
 const App = () => (
   <div className="app">
-    <div className="navbar">
+     <div className="navbar">
       <Navbar />
     </div>
     <div className="main">
@@ -14,10 +15,10 @@ const App = () => (
         <div className="routes">
           <Routes>
             <Route path="/" element={<HomePage />}/>
-            <Route path="/" element={<Exchanges />}/>
-            <Route path="/" element={<Cryptocurrencies />}/>
-            <Route path="/" element={<CryptoDetails />}/>
-            <Route path="/" element={<News />}/>
+            <Route path="/exchanges" element={<Exchanges />}/>
+            <Route path="/cryptocurrencies" element={<Cryptocurrencies />}/>
+            <Route path="/cryptoDetails" element={<CryptoDetails />}/>
+            <Route path="/news" element={<News />}/>
           </Routes>
         </div>
       </Layout>
@@ -39,3 +40,4 @@ const App = () => (
 );
 
 export default App;
+
