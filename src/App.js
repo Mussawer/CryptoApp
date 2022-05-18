@@ -1,28 +1,26 @@
-import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
-import { Layout, Typography, Space} from "antd";
-import {Navbar} from './Components'
-import 'antd/dist/antd.css'
+import React from 'react';
+import { Route, Link, Routes } from 'react-router-dom';
+import { Layout, Typography, Space } from 'antd';
+import { Exchanges, HomePage, News, Cryptocurrencies, CryptoDetails, Navbar } from './Components';
 import './App.css';
 
-
-const App = () => {
-  return (
-    <div className="app">
-      <div className="navbar">
-        <Navbar />
-      </div>
-      <div className="main">
-        <Layout>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/exchanges" component={Exchanges} />
-            <Route exact path="/cryptocurrencies" component={Cryptocurrencies} />
-            <Route exact path="/crypto/:coinId" component={CryptoDetails} />
-            <Route exact path="/news" component={News} />
-          </Switch>
-        </Layout>
-      </div>
+const App = () => (
+  <div className="app">
+    <div className="navbar">
+      <Navbar />
+    </div>
+    <div className="main">
+      <Layout>
+        <div className="routes">
+          <Routes>
+            <Route path="/" element={<HomePage />}/>
+            <Route path="/" element={<Exchanges />}/>
+            <Route path="/" element={<Cryptocurrencies />}/>
+            <Route path="/" element={<CryptoDetails />}/>
+            <Route path="/" element={<News />}/>
+          </Routes>
+        </div>
+      </Layout>
       <div className="footer">
         <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>Copyright © 2021
           <Link to="/">
@@ -37,8 +35,7 @@ const App = () => {
         </Space>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default App;
-
